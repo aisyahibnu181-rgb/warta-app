@@ -1,28 +1,45 @@
-# Warta News App - Starter Project
+# BeritaKita App 📰
 
-Selamat datang di repositori Starter untuk pembuatan aplikasi **Warta**. Proyek ini digunakan sebagai _Project-Based Learning_ (PBL) bagi siswi SMK untuk mempelajari pembuatan aplikasi dengan framework Flutter.
+Welcome to **BeritaKita App**, a Flutter-based news application developed as part of a Project-Based Learning (PBL) program.
 
-Repositori ini hanya berisi kerangka awal aplikasi, yang mana logika aplikasinya (API, State Management) telah dikosongkan. 
+BeritaKita App helps users discover, explore, search, and save news articles through a clean and user-friendly interface. This project was developed using Flutter and Dart, with API integration and Riverpod for state management.
 
-## 🚀 Persiapan Awal
-1. Clone repositori ini.
-2. Buka proyek menggunakan VS Code atau Android Studio.
-3. Buka terminal, pastikan berada di folder proyek ini, lalu jalankan:
-   ```bash
-   flutter pub get
-   ```
-4. Ubah nama file `.env.example` menjadi `.env`.
-5. Ikuti **Modul Pembelajaran** yang telah diberikan oleh Trainer/Pengajar-mu.
+## ✨ Features
 
-## 📁 Struktur Pengerjaan
-Kamu akan diinstruksikan oleh Trainer untuk mengisi file-file berikut secara bertahap:
-- `lib/data/models/article.dart`
-- `lib/core/constants/api_constants.dart`
-- `lib/data/services/news_api_service.dart`
-- `lib/data/repositories/news_repository.dart`
-- `lib/providers/...` (Semua file di folder ini)
-- Dan menyambungkan UI dengan State Management (`Riverpod`).
+- **Latest Headlines** — Discover the latest news articles.
+- **News Categories** — Browse news based on different categories.
+- **Search Articles** — Find news using keywords and topics.
+- **Article Details** — Read selected news articles.
+- **Bookmarks** — Save articles to read later.
+- **Share Articles** — Share news articles with others.
+- **Light & Dark Mode** — Choose a comfortable reading theme.
+- **Pull to Refresh** — Refresh the latest news.
 
-Terdapat banyak komentar bertuliskan `// TODO:` di dalam kode. Ikuti panduan modul dan kerjakan TODO tersebut langkah demi langkah.
+## 🛠️ Built With
 
-Semangat belajar dan Happy Coding! 🚀
+- Flutter
+- Dart
+- Riverpod
+- HTTP
+- Cached Network Image
+- Shared Preferences
+- Share Plus
+- URL Launcher
+- Flutter Dotenv
+
+## 🎨 Design
+
+BeritaKita App uses a Sage Green & Beige color palette to create a clean, modern, and comfortable reading experience.
+
+| Color | Hex Code |
+|---|---|
+| Sage Green | `#355E4B` |
+| Soft Green | `#78977A` |
+| Warm Beige | `#F3EFE4` |
+| White | `#FFFFFF` |
+
+## 🎯 Project Purpose
+
+This project aims to apply practical knowledge of mobile application development, including Flutter, Dart, REST API integration, state management, and user interface design.
+
+**Happy Coding! 🚀**

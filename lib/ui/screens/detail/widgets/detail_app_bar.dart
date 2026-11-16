@@ -4,6 +4,8 @@ import '../../../../data/models/article.dart';
 import '../../../widgets/article_image.dart';
 import '../../../widgets/bookmark_button.dart';
 
+import 'package:share_plus/share_plus.dart';
+
 /// App bar dengan gambar besar yang menyusut saat di-scroll.
 class DetailAppBar extends StatelessWidget {
   const DetailAppBar({super.key, required this.article});
@@ -27,6 +29,19 @@ class DetailAppBar extends StatelessWidget {
       actions: [
         BookmarkButton(article: article, tonal: true),
         const SizedBox(width: 8),
+        // Tombol Share Article (FITUR BARU)
+        IconButton.filledTonal(
+          tooltip: 'Bagikan artikel',
+          icon: const Icon(Icons.share_rounded),
+          onPressed: () {
+            SharePlus.instance.share(
+              ShareParams(
+                title: article.title,
+                text: '${article.title}\n\nBaca selengkapnya:\n${article.url}',
+              ),
+            );
+          },
+        ),
       ],
       flexibleSpace: FlexibleSpaceBar(
         stretchModes: const [StretchMode.zoomBackground],

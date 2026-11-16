@@ -1,44 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/utils/date_formatter.dart';
 import '../../../widgets/theme_toggle_button.dart';
 
-// TODO: Ubah HomeAppBar menjadi ConsumerWidget
-class HomeAppBar extends StatelessWidget {
+class HomeAppBar extends ConsumerWidget {
   const HomeAppBar({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
+    final colors = theme.colorScheme;
 
     return SliverAppBar(
+      pinned: true,
       floating: true,
       snap: true,
-      toolbarHeight: 76,
+      toolbarHeight: 100,
+      backgroundColor: colors.primary,
+      foregroundColor: colors.onPrimary,
+      surfaceTintColor: Colors.transparent,
+      elevation: 0,
+
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             DateFormatter.today(),
-            style: theme.textTheme.labelLarge?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
+            style: theme.textTheme.labelMedium?.copyWith(
+              color: colors.onPrimary.withValues(alpha: 0.8),
             ),
           ),
-          const SizedBox(height: 2),
-          Text('Warta', style: theme.textTheme.headlineMedium),
+          const SizedBox(height: 3),
+          Text(
+            'BERITAKITA',
+            style: theme.textTheme.headlineMedium?.copyWith(
+              fontSize: 24,
+              fontWeight: FontWeight.w800,
+              letterSpacing: 0.5,
+              color: colors.onPrimary,
+            ),
+          ),
         ],
       ),
-      actions: [
-        const ThemeToggleButton(),
-        IconButton(
-          tooltip: 'Cari berita',
-          icon: const Icon(Icons.search_rounded),
-          onPressed: () {
-            // TODO: Gunakan ref.read(navigationProvider) untuk pindah ke tab search
-          },
-        ),
-        const SizedBox(width: 8),
-      ],
+
+      actions: const [ThemeToggleButton(), SizedBox(width: 8)],
     );
   }
 }
